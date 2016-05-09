@@ -1,0 +1,27 @@
+<% if @context.class == Business %>
+
+<h1>Editing Interaction for <%= @context.name %></h1>
+
+<% else %>
+
+<h1>Editing Interaction for <%= @context.first_name %></h1>
+
+<% end %>
+
+
+
+
+
+
+<%= form_for [@context, @interaction] do |f| %>
+  <div class="form-group">
+    <%= f.label :description %>
+    <%= f.text_area :description, class: "form-control", placeholder: "Enter a description of the interaction you had with this entity.", rows: 10 %>
+  </div>
+
+  <%= f.submit class: "btn btn-primary" %>
+<% end %>
+
+
+
+
